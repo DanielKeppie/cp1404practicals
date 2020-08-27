@@ -4,20 +4,22 @@ Broken program to determine score status
 """
 
 # TODO: Fix this!
+import random
+
 
 def main():
-    score = get_valid_score()
-    grade = calculate_result(score)
-    print("With our score of {} you have received a {} ".format(score, grade))
+    score = get_valid_score() #or score = random_score()
+    statement = calculate_result(score)
+    print(statement.format(score))
 
 
 def calculate_result(score):
     if score > 90:  # Ordered them properly
-        print("excellent mark")
+        return("With your score of {} you have received an excellent grade")
     elif score > 50:
-        return("pass")
+        return("With your score of {} you have received a pass ")
     else:
-        return("fail")
+        return("With our score of {} you have failed")
 
 
 def get_valid_score():
@@ -26,6 +28,11 @@ def get_valid_score():
         print("Invalid score")
         score = float(input("Enter score: "))  # Added an escape to the while loop
     return score
+
+
+def random_score():
+    rand_score = random.randint(0,100)
+    return rand_score
 
 
 main()

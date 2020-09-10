@@ -12,11 +12,11 @@ while email != "":
     for name in temp_name:
         persons_name += name.title() + " "
     try:
-        name_change = input("Is your name {}? (Y/n) ".format(persons_name))
-        if name_change[0] in "Nn":
+        name_change = input("Is your name {}? (Y/n) ".format(persons_name)).lower()
+        if name_change[0] == "n":
             persons_name = input("Name: ")
     except IndexError:
-        no = 1  # Awful placeholder as I'm out of ideas.
+        pass
     email_book[persons_name] = email
     email = input("Email: ")
 for entry in email_book:

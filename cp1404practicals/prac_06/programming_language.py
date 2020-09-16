@@ -6,7 +6,7 @@ Programming Language
 
 class ProgrammingLanguage:
 
-    def __init__(self, name="", typing="", reflection=True, year=1900):
+    def __init__(self, name="", typing="", reflection=True, year=0):
         """Initialise ProgrammingLanguage"""
         self.name = name.title()
         self.typing = typing.title()
